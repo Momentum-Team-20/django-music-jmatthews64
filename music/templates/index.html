@@ -6,7 +6,7 @@
 <h4>Albums:</h4>
 <ul>
     {% for album in albums %}
-    <li> {{ album }} </li>
+    <li><strong><a href="{% url 'album-details' album.pk %}">{{ album }}</a></strong> By {{ album.artist }}</li>
     {% endfor %}
 </ul>
 {% endblock %}

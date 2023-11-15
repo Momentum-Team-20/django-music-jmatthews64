@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Album Details:</h1>
+    <h3> {{ album.name }}</h3>
+    <ul>
+        <li>By: {{album.artist}}</ll>
+        <li>Number of tracks: {{ album.number_of_tracks }}</li>
+        <li>Entry date: {{ album.created_at }}</li>
+    </ul>
+    <!-- <a href="{% url 'update-album' album.pk%}">Update Album</a> -->
+{% endblock %}

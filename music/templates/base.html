@@ -1,12 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h1>Something to put on a page to see if it works</h1>
+    <h1>Your Album Database</h1>
+    <nav>
+        <a href="{% url 'home' %}">Album Home</a>
+        <a href="{% url 'artists' %}">Artist List</a>
+    </nav>
     {% block content %}
     {% endblock %}
 </body>
