@@ -23,6 +23,11 @@ def album_details(request, pk):
     )
 
 
+def artist_details(request, pk):
+    artist = get_object_or_404(Artist, pk=pk)
+    return render(request, 'artist_details.html', {'artist': artist})
+
+
 def create_new_album(request):
     album = Album.objects.all()
     if request.method == 'POST':
