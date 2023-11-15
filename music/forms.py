@@ -12,3 +12,9 @@ class NewArtistForm(ModelForm):
     class Meta:
         model = Artist
         fields = ('name',)
+
+
+class AlbumForm(ModelForm):
+    class Meta:
+        model = Album
+        fields = ('name', 'artist', 'number_of_tracks')

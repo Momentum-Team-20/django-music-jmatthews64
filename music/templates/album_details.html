@@ -8,4 +8,5 @@
         <li>Number of tracks: {{ album.number_of_tracks }}</li>
         <li>Entry date: {{ album.created_at }}</li>
     </ul>
+    <a href="{% url 'edit-album' pk=album.pk %}">Edit Album</a>
 {% endblock %}

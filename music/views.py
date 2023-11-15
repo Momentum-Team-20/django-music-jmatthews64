@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import NewAlbumForm, NewArtistForm
+from .forms import NewAlbumForm, NewArtistForm, AlbumForm
 from .models import Album, Artist
 
 
@@ -45,3 +45,16 @@ def add_new_artist(request):
         return redirect('artists')
     form = NewArtistForm()
     return render(request, "new_artist.html", {'form': form})
+
+
+def edit_album(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    if request.method == 'POST':
+        form = AlbumForm(request.POST, instance=album)
+        if form.is_valid():
+            album = form.save(commit=False)
+            album.save()
+            return redirect('album-details', pk=album.pk)
+    else:
+        form = AlbumForm(instance=album)
+    return render(request, 'edit_album.html', {'form': form})

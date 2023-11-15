@@ -7,4 +7,5 @@ urlpatterns = [
     path('album/<int:pk>', views.album_details, name='album-details'),
     path('albums/new-album', views.create_new_album, name="new-album"),
     path('artists/new-artist', views.add_new_artist, name='new-artist'),
+    path('album/<int:pk>/edit', views.edit_album , name='edit-album')
 ]
