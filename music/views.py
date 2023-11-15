@@ -23,8 +23,8 @@ def album_details(request, pk):
     )
 
 
-def create_new_album(request, coll_pk):
-    album = get_object_or_404(Album, pk=coll_pk)
+def create_new_album(request):
+    album = Album.objects.all()
     if request.method == 'POST':
         form = NewAlbumForm(request.POST)
         new_album = form.save(commit=False)
